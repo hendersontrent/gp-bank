@@ -1,2 +1,2 @@
 # gp-bank
-Stores a bank of Gaussian process functions that I can reuse/adapt as I need
+Stores a bank of Gaussian process models that I can reuse/adapt as I need
