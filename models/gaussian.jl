@@ -18,13 +18,13 @@ Random.seed!(123) # Fix seed for reproducibility
 
 # Squared exponential kernel
 
-sqexp_cov_fn(D, ϕ, ϵ = 1e-3) = exp.(-D^2 / ϕ) + LinearAlgebra.I * ϵ
+SEkernel(D, ϕ, ϵ = 1e-3) = exp.(-D^2 / ϕ) + LinearAlgebra.I * ϵ
 
 #-----------------
 # Define the model
 #-----------------
 
-@model function GP(y::Array, X::Array, μₘ::Float64 = 0.0, σₛ::Float64 = 1.0, Σfunction = sqexp_cov_fn)
+@model function GP(y::Array, X::Array, μₘ::Float64 = 0.0, σₛ::Float64 = 1.0, Σfunction = SEkernel)
     
     # Get row size of the input matrix
 
